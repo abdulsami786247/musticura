@@ -1,0 +1,179 @@
+/* Wider card for the bigger form */
+.page :global(.auth-card) {
+  max-width: 680px;
+}
+
+.fieldLabel {
+  display: block;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.fieldLabel small {
+  font-weight: 400;
+  color: #64748b;
+}
+
+/* Role selector */
+.roleGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.roleBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.roleBtn:hover {
+  transform: translateY(-2px);
+  border-color: #93c5fd;
+}
+
+.roleBtn.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+}
+
+.roleIcon {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.roleTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.roleBtn.active .roleTitle {
+  color: #2563eb;
+}
+
+.roleText {
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* Course selector (single choice) */
+.courseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.courseBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.courseBtn:hover {
+  border-color: #93c5fd;
+}
+
+.courseBtn.active {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Password rules checklist */
+.rules {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 16px;
+  margin-top: -8px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.rules li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.rules li::before {
+  content: "○";
+  position: absolute;
+  left: 0;
+  color: #cbd5e1;
+}
+
+.rules li.ok {
+  color: #15803d;
+}
+
+.rules li.ok::before {
+  content: "✓";
+  color: #16a34a;
+  font-weight: 700;
+}
+
+/* Submit button */
+.submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Success state */
+.successIcon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+  font-size: 36px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .roleGrid {
+    grid-template-columns: 1fr;
+  }
+  .rules {
+    grid-template-columns: 1fr;
+  }
+}
